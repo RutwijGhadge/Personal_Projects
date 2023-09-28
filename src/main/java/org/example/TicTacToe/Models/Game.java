@@ -1,4 +1,4 @@
-package TicTacToeModels;
+package org.example.TicTacToe.Models;
 
 import java.util.List;
 
