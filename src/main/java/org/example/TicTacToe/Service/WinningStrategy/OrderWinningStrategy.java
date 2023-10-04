@@ -54,7 +54,7 @@ public class OrderWinningStrategy implements WinningStrategy{
 
         if(checkRowWin(row,Symbol))//checking the winning Conditions (whether it fits in or not)
             return player;
-        else if (checkColumnWin(row,Symbol))
+        else if (checkColumnWin(col,Symbol))
             return player;
         else if (isTopLeftDiagonalCell(row,col) && checkTopLeftDiagonalWin(Symbol))
             return player;
@@ -84,7 +84,8 @@ public class OrderWinningStrategy implements WinningStrategy{
             colHashMaps.get(col).put(Symbol,0);
         }
         else{
-            colHashMaps.get(col).put(Symbol,colHashMaps.get(col).get(Symbol)+1);//update the count if present
+            colHashMaps.get(col).put(Symbol,colHashMaps.get(col).get(Symbol)+1);
+            //update the count if present
         }
 
         if(colHashMaps.get(col).get(Symbol)==dimension-1)//if the symbol cnt is equal to dimension -1
@@ -125,7 +126,7 @@ public class OrderWinningStrategy implements WinningStrategy{
             cornersHashMap.put(Symbol,cornersHashMap.get(Symbol)+1);    //update the count if present
         }
 
-        if(cornersHashMap.get(Symbol)==4)   //if the symbol cnt is equal to 4 corners
+        if(cornersHashMap.get(Symbol)==3)   //if the symbol cnt is equal to 4 corners
             return true;
         return false;
     }

@@ -56,17 +56,25 @@ public class Main {
             gameController.displayBoard(game);
             playerIndex++;
             playerIndex=playerIndex % players.size();
+            Player winner = null;
 
             System.out.println("Make Your Move "+players.get(playerIndex).getName() );
             Move movePlayed=gameController.executeMove(game,players.get(playerIndex));
-            Player winner=gameController.checkWinner(game,movePlayed);
+
+            if(movePlayed!=null){
+                 winner=gameController.checkWinner(game,movePlayed);
+            }
+            else{
+                playerIndex--;//give chance to Same player
+            }
+
             if(winner!=null) {
                 System.out.println("Thanks for the Participation");
-                System.out.println("Winner is:" + winner.getName());
+                System.out.println("Winner of the Game is:" + winner.getName());
                 break;
             }
             if(gameController.getGameStatus(game).equals(GameStatus.DRAW)){
-                System.out.println("Game Drawn : Thanks for the Participation");
+                System.out.println("Game has been Drawn : Thanks for the Participation");
             }
         }
         System.out.println("Final Board Status:");

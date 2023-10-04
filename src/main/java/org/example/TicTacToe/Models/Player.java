@@ -33,14 +33,12 @@ public class Player {
                 return new Move(row,col,this);
             }else{
                 System.out.println("Cell is Already Filled");
-             //   makeMove(board);
                 return null;
             }
         }
         else{
             System.out.println("Out of Range Row:"+row +" && Column :"+col);
             System.out.println("Give new Choice");
-          //  makeMove(board);
             return null;
         }
      //   return new Move(row,col,this);

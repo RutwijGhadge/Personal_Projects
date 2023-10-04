@@ -36,6 +36,9 @@ public class GameController {
 
     public Move executeMove(Game game,Player player){
         Move move=player.makeMove(game.getCurrentBoard());
+        if(move==null){
+            return null;
+        }
         game.setNo_of_Symbols(game.getNo_of_Symbols()+1);
         updateGameStatus(game);
         //current board is passed so that Move will be executed on this board
