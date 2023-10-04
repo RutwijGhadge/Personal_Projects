@@ -1,11 +1,11 @@
 package org.example.TicTacToe.Models;
 
+import org.example.TicTacToe.Service.WinningStrategy.WinningStrategy;
 import org.example.TicTacToe.exceptions.InvalidBoardSizeException;
 import org.example.TicTacToe.exceptions.InvalidBotCountException;
 import org.example.TicTacToe.exceptions.InvalidPlayerCountException;
 import org.example.TicTacToe.exceptions.InvalidPlayerSymbolException;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -18,15 +18,90 @@ public class Game {
     private Player winner;
     private List<Move> move;                //for replay feature
     private List<Board>boardStates;         //for replay feature
+
+    private int no_of_Symbols;
+    public Board getCurrentBoard() {
+        return currentBoard;
+    }
+
+    public int getNo_of_Symbols() {
+        return no_of_Symbols;
+    }
+
+    public void setNo_of_Symbols(int no_of_Symbols) {
+        this.no_of_Symbols = no_of_Symbols;
+    }
+
+    public void setCurrentBoard(Board currentBoard) {
+        this.currentBoard = currentBoard;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    public void setGameStatus(GameStatus gameStatus) {
+        this.gameStatus = gameStatus;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public List<Move> getMove() {
+        return move;
+    }
+
+    public void setMove(List<Move> move) {
+        this.move = move;
+    }
+
+    public List<Board> getBoardStates() {
+        return boardStates;
+    }
+
+    public void setBoardStates(List<Board> boardStates) {
+        this.boardStates = boardStates;
+    }
+
+    public WinningStrategy getWinningStrategy() {
+        return winningStrategy;
+    }
+
+    public void setWinningStrategy(WinningStrategy winningStrategy) {
+        this.winningStrategy = winningStrategy;
+    }
+
     private WinningStrategy winningStrategy;
 
     public Game(Board currentBoard,List<Player> players,WinningStrategy winningStrategy) {
         this.currentBoard = currentBoard;
         this.players = players;
-        this.gameStatus = GameStatus.INPROGRESS;//starting of the game status should be inprogress
+        this.gameStatus = GameStatus.PROGRESS;//starting of the game status should be inprogress
         this.move = new ArrayList<Move>();//no moves during the initialization so declared empty arraylist
         this.winningStrategy = winningStrategy;
         this.boardStates = new ArrayList<Board>();//No boardstates at the beginning
+        this.no_of_Symbols=0;
         // this.currentPlayer = currentPlayer; wont be able to declare the current player during the start
        // this.winner = winner;  No winner at the start of the game
     }
@@ -37,7 +112,8 @@ public class Game {
     public static class Builder{
     //validations will be done only for the Attributes that we are passing
         private int dimension;
-        private Board currentBoard;
+      //  private Board currentBoard;
+
         private List<Player> players;
         private WinningStrategy winningStrategy;
 
@@ -46,12 +122,12 @@ public class Game {
             return this;
         }
 
-        public Builder Players(List<Player> players) {
+        public Builder players(List<Player> players) {
             this.players = players;
             return this;
         }
 
-        public Builder WinningStrategy(WinningStrategy winningStrategy) {
+        public Builder winningStrategy(WinningStrategy winningStrategy) {
             this.winningStrategy = winningStrategy;
             return this;
         }
@@ -99,5 +175,6 @@ public class Game {
             Validate();
             return new Game(new Board(dimension),players,winningStrategy);//returning the game type object
         }
+
     }
 }

@@ -1,7 +1,7 @@
 package org.example.TicTacToe.Models;
 
 public enum GameStatus {
-    INPROGRESS,
+    PROGRESS,
     DRAW,
-    SUCCESS;
+    COMPLETED;
 }

@@ -11,9 +11,9 @@ public class Cell {
 
     public void display(){//display the empty cell and cell with the Symbol
         if(player==null)
-            System.out.println("|  |");
+            System.out.print("|   |");
         else
-            System.out.println("| "+player.getSymbol()+" |");
+            System.out.print("| "+player.getSymbol()+" |");
     }
     public int getRow() {
         return row;
