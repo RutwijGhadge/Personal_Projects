@@ -1,4 +1,4 @@
-package org.example;
+package org.example.TicTacToe;
 
 import org.example.TicTacToe.Controller.GameController;
 import org.example.TicTacToe.Models.*;
