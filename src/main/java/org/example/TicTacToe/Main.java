@@ -51,21 +51,25 @@ public class Main {
         //Validations will be done : createGame() -> Build() ->Validate()
 
         int playerIndex=0;
+        int movesCount=0;
         while(gameController.getGameStatus(game).equals(GameStatus.PROGRESS)){
             System.out.println("Current Board Status:");
             gameController.displayBoard(game);
             playerIndex++;
+            movesCount++;
             playerIndex=playerIndex % players.size();
             Player winner = null;
 
             System.out.println("Make Your Move "+players.get(playerIndex).getName() );
-            Move movePlayed=gameController.executeMove(game,players.get(playerIndex));
+            Move movePlayed=gameController.executeMove(game,players.get(playerIndex),movesCount);
+
 
             if(movePlayed!=null){
                  winner=gameController.checkWinner(game,movePlayed);
             }
             else{
                 playerIndex--;//give chance to Same player
+                movesCount--;
             }
 
             if(winner!=null) {
@@ -73,6 +77,7 @@ public class Main {
                 System.out.println("Winner of the Game is:" + winner.getName());
                 break;
             }
+
             if(gameController.getGameStatus(game).equals(GameStatus.DRAW)){
                 System.out.println("Game has been Drawn : Thanks for the Participation");
             }

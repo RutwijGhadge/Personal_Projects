@@ -2,6 +2,8 @@ package org.example.ParkingLot.Models;
 
 import org.example.ParkingLot.Models.Constants.ParkingLotStatus;
 import org.example.ParkingLot.Models.Constants.VehicleType;
+import org.example.ParkingLot.Service.Strategy.BillCalculation.BillCalculationStrategy;
+import org.example.ParkingLot.Service.Strategy.SlotAllocation.SlotAllocationStrategy;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class ParkingLot extends BaseModel{
     private ParkingLotStatus parkingLotStatus;
     private List<VehicleType>allowedvehicleTypes;
     private SlotAllocationStrategy slotAllocationStrategy;
-    private BillCalculationStartegy billCalculationStartegy;
+    private BillCalculationStrategy billCalculationStrategy;
 
     public String getName() {
         return name;
@@ -62,11 +64,11 @@ public class ParkingLot extends BaseModel{
         this.slotAllocationStrategy = slotAllocationStrategy;
     }
 
-    public BillCalculationStartegy getBillCalculationStartegy() {
-        return billCalculationStartegy;
+    public BillCalculationStrategy getBillCalculationStrategy() {
+        return billCalculationStrategy;
     }
 
-    public void setBillCalculationStartegy(BillCalculationStartegy billCalculationStartegy) {
-        this.billCalculationStartegy = billCalculationStartegy;
+    public void setBillCalculationStartegy(BillCalculationStrategy billCalculationStartegy) {
+        this.billCalculationStrategy = billCalculationStartegy;
     }
 }

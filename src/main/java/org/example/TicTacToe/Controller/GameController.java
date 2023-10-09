@@ -5,6 +5,7 @@ import org.example.TicTacToe.Service.WinningStrategy.WinningStrategies;
 import org.example.TicTacToe.Service.WinningStrategy.WinningStrategyFactory;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class GameController {
 
@@ -34,7 +35,7 @@ public class GameController {
         return game.getWinner();
     }
 
-    public Move executeMove(Game game,Player player){
+    public Move executeMove(Game game,Player player,int index){
         Move move=player.makeMove(game.getCurrentBoard());
         if(move==null){
             return null;
@@ -43,8 +44,16 @@ public class GameController {
         updateGameStatus(game);
         //current board is passed so that Move will be executed on this board
         updateListOfMoves(game,move);
+
         //played move is added in the listOf Moves -> for replay or undo
         updateBoardStates(game);
+//       System.out.println("Do you want to undo your move? (Y/N)");
+//        Scanner sc=new Scanner(System.in);
+//        String response=sc.next();
+//
+//        if(response.equalsIgnoreCase("Y")){
+//            undotheMove(game,move,index);
+//        }
         return move;
     }
 
@@ -58,6 +67,12 @@ public class GameController {
 
     private void updateListOfMoves(Game game,Move move){
         game.getMove().add(move);
+    }
+
+    private void undotheMove(Game game,Move move,int index){
+        game.getMove().remove(index-1);
+        game.getBoardStates().remove(index-1);
+        index--;
     }
 
     private void updateBoardStates(Game game){
