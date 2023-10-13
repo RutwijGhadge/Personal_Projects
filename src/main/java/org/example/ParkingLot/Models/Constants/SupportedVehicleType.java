@@ -1,5 +1,5 @@
 package org.example.ParkingLot.Models.Constants;
 
-public enum VehicleType {
+public enum SupportedVehicleType {
     CAR,BUS,TRUCK,BIKE;
 }

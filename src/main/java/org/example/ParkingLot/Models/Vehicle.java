@@ -1,12 +1,12 @@
 package org.example.ParkingLot.Models;
 
-import org.example.ParkingLot.Models.Constants.VehicleType;
+import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 
 public class Vehicle extends BaseModel{
     private String VehicleNumber;
     private String name;
     private String color;
-    private VehicleType vehicleType;
+    private SupportedVehicleType vehicleType;
 
     public String getVehicleNumber() {
         return VehicleNumber;
@@ -32,11 +32,11 @@ public class Vehicle extends BaseModel{
         this.color = color;
     }
 
-    public VehicleType getVehicleType() {
+    public SupportedVehicleType getVehicleType() {
         return vehicleType;
     }
 
-    public void setVehicleType(VehicleType vehicleType) {
+    public void setVehicleType(SupportedVehicleType vehicleType) {
         this.vehicleType = vehicleType;
     }
 }

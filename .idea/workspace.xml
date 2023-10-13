@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1ed860c-9d3b-4f25-80b4-238fa3ca485a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Constants/VehicleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Constants/SupportedVehicleType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/ParkingLot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/ParkingSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/ParkingSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example.ParkingLot.Service" />
       <recent name="org.example.TicTacToe" />
     </key>
   </component>

@@ -18,8 +18,9 @@ public class Game {
     private Player winner;
     private List<Move> move;                //for replay feature
     private List<Board>boardStates;         //for replay feature
-
     private int no_of_Symbols;
+
+
     public Board getCurrentBoard() {
         return currentBoard;
     }

@@ -1,7 +1,7 @@
 package org.example.ParkingLot.Models;
 
 import org.example.ParkingLot.Models.Constants.ParkingLotStatus;
-import org.example.ParkingLot.Models.Constants.VehicleType;
+import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 import org.example.ParkingLot.Service.Strategy.BillCalculation.BillCalculationStrategy;
 import org.example.ParkingLot.Service.Strategy.SlotAllocation.SlotAllocationStrategy;
 
@@ -12,7 +12,7 @@ public class ParkingLot extends BaseModel{
     private String address;
     private List<ParkingFloor> parkingFloor;
     private ParkingLotStatus parkingLotStatus;
-    private List<VehicleType>allowedvehicleTypes;
+    private List<SupportedVehicleType>allowedvehicleTypes;
     private SlotAllocationStrategy slotAllocationStrategy;
     private BillCalculationStrategy billCalculationStrategy;
 
@@ -48,11 +48,11 @@ public class ParkingLot extends BaseModel{
         this.parkingLotStatus = parkingLotStatus;
     }
 
-    public List<VehicleType> getAllowedvehicleTypes() {
+    public List<SupportedVehicleType> getAllowedvehicleTypes() {
         return allowedvehicleTypes;
     }
 
-    public void setAllowedvehicleTypes(List<VehicleType> allowedvehicleTypes) {
+    public void setAllowedvehicleTypes(List<SupportedVehicleType> allowedvehicleTypes) {
         this.allowedvehicleTypes = allowedvehicleTypes;
     }
 

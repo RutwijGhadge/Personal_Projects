@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Player {
     private int id;
     private String Name;
+    private char Symbol;
+    private PlayerType playerType;//Bot or user
 
     public Player(int id, String name, char symbol, PlayerType playerType) {
         this.id = id;
@@ -12,9 +14,6 @@ public class Player {
         Symbol = symbol;
         this.playerType = playerType;
     }
-
-    private char Symbol;
-    private PlayerType playerType;//Bot or user
 
     public Move makeMove(Board board){      //returns a move played by a player
         Scanner sc=new Scanner(System.in);
