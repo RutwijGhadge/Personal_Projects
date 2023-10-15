@@ -9,6 +9,9 @@ import java.util.HashMap;
 public class ParkingSlotRepository {
     private HashMap<Integer, ParkingSlot> ParkingSlotMap=new HashMap<Integer, ParkingSlot>();
 
+    public ParkingSlotRepository() {
+    }
+
     public ParkingSlotRepository(HashMap<Integer, ParkingSlot> parkingSlotMap) {
         this.ParkingSlotMap = new HashMap<>();
     }

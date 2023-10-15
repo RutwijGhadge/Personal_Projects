@@ -4,10 +4,22 @@ import org.example.ParkingLot.Models.Constants.ParkingSlotStatus;
 import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 
 public class ParkingSlot extends BaseModel{
+    private int id;
     private int slotNumber;
     private ParkingSlotStatus parkingSlotStatus;
     private SupportedVehicleType supportedVehicleType;
     private Vehicle vehicle;        //storing the info of vehicle
+
+    public ParkingSlot() {
+    }
+
+    public ParkingSlot( int id,int slotNumber,
+                        SupportedVehicleType supportedVehicleType) {
+        super((id));
+        this.slotNumber = slotNumber;
+        this.parkingSlotStatus = ParkingSlotStatus.AVAILABLE;
+        this.supportedVehicleType = supportedVehicleType;
+    }
 
     public int getSlotNumber() {
         return slotNumber;
@@ -29,7 +41,7 @@ public class ParkingSlot extends BaseModel{
         return supportedVehicleType;
     }
 
-    public void setVehicleType(SupportedVehicleType supportedVehicleType) {
+    public void setSupportedVehicleType(SupportedVehicleType supportedVehicleType) {
         this.supportedVehicleType = supportedVehicleType;
     }
 

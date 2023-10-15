@@ -4,7 +4,7 @@ import org.example.ParkingLot.Models.Constants.GateStatus;
 import org.example.ParkingLot.Models.Constants.GateType;
 
 public class Gate extends BaseModel {
-    private Operator operator;
+    private String operator;
     private GateType gateType;
     private int floornumber;
     private int parkinglotid;
@@ -19,11 +19,11 @@ public class Gate extends BaseModel {
         this.gatenumber = gatenumber;
     }
 
-    public Operator getOperator() {
+    public String getOperator() {
         return operator;
     }
 
-    public void setOperator(Operator operator) {
+    public void setOperator(String operator) {
         this.operator = operator;
     }
 

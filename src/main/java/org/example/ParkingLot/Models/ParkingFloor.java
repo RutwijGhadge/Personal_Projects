@@ -8,7 +8,7 @@ public class ParkingFloor extends BaseModel{
     private int floorNumber;
     private String address;
     private List<ParkingSlot> parkingSlot;
-    private List<Gate>game;
+    private List<Gate>gate;
     private ParkingFloorStatus parkingFloorStatus;
 
     public int getFloorNumber() {
@@ -35,12 +35,12 @@ public class ParkingFloor extends BaseModel{
         this.parkingSlot = parkingSlot;
     }
 
-    public List<Gate> getGame() {
-        return game;
+    public List<Gate> getGate() {
+        return gate;
     }
 
-    public void setGame(List<Gate> game) {
-        this.game = game;
+    public void setGate(List<Gate> game) {
+        this.gate = gate;
     }
 
     public ParkingFloorStatus getParkingFloorStatus() {

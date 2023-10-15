@@ -6,6 +6,9 @@ import org.example.ParkingLot.Models.Gate;
 import java.util.HashMap;
 
 public class GateRepository {
+    public GateRepository() {
+    }
+
     private HashMap<Integer, Gate>gateMap=new HashMap<Integer, Gate>();
 
     public GateRepository(HashMap<Integer, Gate> gateMap) {

@@ -6,6 +6,9 @@ import org.example.ParkingLot.Models.Ticket;
 import java.util.HashMap;
 
 public class TicketRepository {
+    public TicketRepository() {
+    }
+
     private HashMap<Integer, Ticket> ticketMap=new HashMap<Integer, Ticket>();
 
     public TicketRepository(HashMap<Integer, Ticket> ticketMap) {

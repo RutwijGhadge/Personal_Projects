@@ -6,6 +6,9 @@ import org.example.ParkingLot.Models.ParkingFloor;
 import java.util.HashMap;
 
 public class ParkingFloorRepository {
+    public ParkingFloorRepository() {
+    }
+
     private HashMap<Integer, ParkingFloor> ParkingFloorMap=new HashMap<Integer, ParkingFloor>();
 
     public ParkingFloorRepository(HashMap<Integer, ParkingFloor> parkingFloorMap) {

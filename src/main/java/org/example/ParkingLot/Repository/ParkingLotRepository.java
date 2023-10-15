@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class ParkingLotRepository {
     private HashMap<Integer, ParkingLot> ParkingLotMap=new HashMap<Integer, ParkingLot>();
 
-    public ParkingLotRepository(HashMap<Integer, ParkingLot> parkingLotMap) {
+    public ParkingLotRepository() {
         this.ParkingLotMap = new HashMap<>();
     }
 
