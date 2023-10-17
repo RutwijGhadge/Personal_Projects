@@ -1,28 +1,37 @@
-package org.example.ParkingLot.Models;
+package org.example.ParkingLot.DTO;
 
 import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 
-public class Vehicle extends BaseModel{
-    private String VehicleNumber;
+public class TicketRequestDTO {
+    private int parkingLotId;
+    private int gateId;
+    private String number;//vehicle number
     private String name;
     private String color;
     private SupportedVehicleType vehicleType;
 
-    public Vehicle(String vehicleNumber, String name, String color, SupportedVehicleType vehicleType) {
-        VehicleNumber = vehicleNumber;
-        this.name = name;
-        this.color = color;
-        this.vehicleType = vehicleType;
+    public int getParkingLotId() {
+        return parkingLotId;
     }
 
-
-
-    public String getVehicleNumber() {
-        return VehicleNumber;
+    public void setParkingLotId(int parkingLotId) {
+        this.parkingLotId = parkingLotId;
     }
 
-    public void setVehicleNumber(String vehicleNumber) {
-        VehicleNumber = vehicleNumber;
+    public int getGateId() {
+        return gateId;
+    }
+
+    public void setGateId(int gateId) {
+        this.gateId = gateId;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getName() {

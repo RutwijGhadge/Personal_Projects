@@ -41,7 +41,7 @@ public class Ticket extends BaseModel{
         this.ticketStatus = ticketStatus;
     }
 
-    public ParkingSlot parkingSlot() {
+    public ParkingSlot getParkingSlot() {
         return parkingSlot;
     }
 
