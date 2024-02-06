@@ -22,7 +22,7 @@ public class Player {
         int row=sc.nextInt();
         System.out.println("Enter the Column:");
         int col=sc.nextInt();
-        // To Do : validations for Row And Column & Cell Status
+
 
         if( row < board.getSize() && col <board.getSize()){//validations for row and col
             CellState cellState=board.getBoard().get(row).get(col).getCellState();

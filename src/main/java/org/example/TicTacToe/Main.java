@@ -22,6 +22,7 @@ public class Main {
 
         List<Player>players=new ArrayList<>();
         int iterator=dimension-1;//n-1 players for size n*n
+
         if(isBOTPresent.equalsIgnoreCase("Y")){
             iterator-=1;
             System.out.println("Name of the BOT:");
@@ -51,26 +52,18 @@ public class Main {
         //Validations will be done : createGame() -> Build() ->Validate()
 
         int playerIndex=0;
-        int movesCount=0;
+
         while(gameController.getGameStatus(game).equals(GameStatus.PROGRESS)){
             System.out.println("Current Board Status:");
             gameController.displayBoard(game);
             playerIndex++;
-            movesCount++;
             playerIndex=playerIndex % players.size();
             Player winner = null;
 
             System.out.println("Make Your Move "+players.get(playerIndex).getName() );
-            Move movePlayed=gameController.executeMove(game,players.get(playerIndex),movesCount);
+            Move movePlayed=gameController.executeMove(game,players.get(playerIndex));
 
-
-            if(movePlayed!=null){
-                 winner=gameController.checkWinner(game,movePlayed);
-            }
-            else{
-                playerIndex--;//give chance to Same player
-                movesCount--;
-            }
+            winner=gameController.checkWinner(game,movePlayed);
 
             if(winner!=null) {
                 System.out.println("Thanks for the Participation");
@@ -84,6 +77,14 @@ public class Main {
         }
         System.out.println("Final Board Status:");
         gameController.displayBoard(game);
+
+        System.out.println("Do you want the game replay? Y/N");
+        Scanner sct=new Scanner(System.in);
+        String isReplayReq = sct.next();
+        if(isReplayReq.equalsIgnoreCase("Y")) {
+            System.out.println("========================================================");
+            System.out.println();
+            gameController.replay(game);
+        }
     }
 }
-//TO DO : Replay And Undo Feature

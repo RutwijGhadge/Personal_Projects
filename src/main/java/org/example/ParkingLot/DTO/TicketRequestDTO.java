@@ -3,6 +3,7 @@ package org.example.ParkingLot.DTO;
 import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 
 public class TicketRequestDTO {
+    private int TicketId;
     private int parkingLotId;
     private int gateId;
     private String number;//vehicle number

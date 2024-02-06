@@ -9,4 +9,5 @@ import org.example.ParkingLot.Models.ParkingSlot;
 public interface SlotAllocationStrategy {
     ParkingSlot findParkingSlot(SupportedVehicleType vehicleType, ParkingLot parkingLot, Gate EntryGate ) throws ParkingSlotNotAvailable;
     //vehicleType and ParkingLot Require
+    //entry gate require for nearest slot allocation
 }

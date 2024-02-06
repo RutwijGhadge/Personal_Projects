@@ -11,6 +11,7 @@ import org.example.ParkingLot.Repository.TicketRepository;
 import java.time.LocalDateTime;
 
 public class TicketServiceIMPL implements TicketService{
+    public static int counter=0;
     private ParkingLotRepository parkingLotRepository;
     private GateRepository gateRepository;
     private TicketRepository ticketRepository;
@@ -22,17 +23,15 @@ public class TicketServiceIMPL implements TicketService{
     }
 
     @Override
-    public Ticket CreateTicket(Vehicle vehicle, int gateId, int parkingLotId, LocalDateTime entryTime) throws GateNotFoundException, ParkingLotNotFoundException, ParkingSlotNotAvailable {
-        ParkingLot parkingLot= parkingLotRepository.get(parkingLotId);
+    public Ticket CreateTicket(int id,Vehicle vehicle, int gateId, int parkingLotId, LocalDateTime entryTime) throws GateNotFoundException, ParkingLotNotFoundException, ParkingSlotNotAvailable {
+        ParkingLot parkingLot= parkingLotRepository.get(parkingLotId);//helps to return the ParkingLot
         Gate gate= gateRepository.get(gateId);
         ParkingSlot assignedParkingSlot=parkingLot.getSlotAllocationStrategy().findParkingSlot(vehicle.getVehicleType(),parkingLot,gate);
         Ticket ticket=new Ticket();
+        ticket.setId(id);
         ticket.setEntryTime(entryTime);
         ticket.setVehicle(vehicle);
         ticket.setParkingSlot(assignedParkingSlot);
         return ticketRepository.put(ticket);
     }
-
-
-
 }

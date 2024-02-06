@@ -15,8 +15,6 @@ public class Vehicle extends BaseModel{
         this.vehicleType = vehicleType;
     }
 
-
-
     public String getVehicleNumber() {
         return VehicleNumber;
     }

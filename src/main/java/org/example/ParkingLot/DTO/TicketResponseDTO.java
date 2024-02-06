@@ -3,6 +3,7 @@ package org.example.ParkingLot.DTO;
 import org.example.ParkingLot.Models.Constants.SupportedVehicleType;
 
 public class TicketResponseDTO {//gives response to user
+    private int ticketId;
     private String entryTime;
     private String number;
     private int slotNumber;

@@ -1,13 +1,24 @@
 package org.example.ParkingLot.Models;
 
+import org.example.ParkingLot.Models.Constants.TicketStatus;
+
 import java.time.LocalDateTime;
 
 public class Ticket extends BaseModel{
+    private int TicketId;
     private LocalDateTime entryTime;
     private Vehicle vehicle;
     private Gate gate;
     private TicketStatus ticketStatus;
     private ParkingSlot parkingSlot;
+
+    public int getTicketId() {
+        return TicketId;
+    }
+
+    public void setTicketId(int ticketId) {
+        TicketId = ticketId;
+    }
 
     public LocalDateTime getEntryTime() {
         return entryTime;

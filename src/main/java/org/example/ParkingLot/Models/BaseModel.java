@@ -47,9 +47,5 @@ public class BaseModel {
         this.updatedBy = updatedBy;
     }
 
-    public enum TicketStatus {
-        EXPIRED,
-        PAID,
-        ACTIVE;
-    }
+
 }

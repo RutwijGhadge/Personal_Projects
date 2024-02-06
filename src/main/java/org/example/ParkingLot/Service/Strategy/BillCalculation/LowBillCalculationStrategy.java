@@ -15,6 +15,8 @@ public class LowBillCalculationStrategy implements BillCalculationStrategy{
     @Override
     public double calculateBillAmount(Ticket ticket, LocalDateTime ExitTime) {
         LocalDateTime entryTime = ticket.getEntryTime();
+        /* String dateString = "2024-02-06T12:45:30";
+        entryTime = LocalDateTime.parse(dateString);*/
         int costPerHour=0;
         long totalHours = ChronoUnit.HOURS.between(ExitTime, entryTime); // 40 mins -> 1 , 1:30 -> 2 2:40 -> 3
         //charge as per the type of vehicle

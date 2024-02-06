@@ -35,11 +35,9 @@ public class GameController {
         return game.getWinner();
     }
 
-    public Move executeMove(Game game,Player player,int index){
+    public Move executeMove(Game game,Player player){
         Move move=player.makeMove(game.getCurrentBoard());
-        if(move==null){
-            return null;
-        }
+
         game.setNo_of_Symbols(game.getNo_of_Symbols()+1);
         updateGameStatus(game);
         //current board is passed so that Move will be executed on this board
@@ -47,13 +45,7 @@ public class GameController {
 
         //played move is added in the listOf Moves -> for replay or undo
         updateBoardStates(game);
-//       System.out.println("Do you want to undo your move? (Y/N)");
-//        Scanner sc=new Scanner(System.in);
-//        String response=sc.next();
-//
-//        if(response.equalsIgnoreCase("Y")){
-//            undotheMove(game,move,index);
-//        }
+
         return move;
     }
 
@@ -69,15 +61,10 @@ public class GameController {
         game.getMove().add(move);
     }
 
-    private void undotheMove(Game game,Move move,int index){
-        game.getMove().remove(index-1);
-        game.getBoardStates().remove(index-1);
-        index--;
-    }
-
     private void updateBoardStates(Game game){
         game.getBoardStates().add(new Board(game.getCurrentBoard()));
     }
+
 
     public Player checkWinner(Game game , Move lastPlayedMove){//checking the winner of game
         Player player=game.getWinningStrategy().checkWinner(game.getCurrentBoard(),lastPlayedMove);
@@ -87,5 +74,12 @@ public class GameController {
             return player;
       }
         return null;
+    }
+
+    public void replay(Game game){
+        for(Board board : game.getBoardStates()){
+            board.printBoard();
+            System.out.println("======================================");
+        }
     }
 }

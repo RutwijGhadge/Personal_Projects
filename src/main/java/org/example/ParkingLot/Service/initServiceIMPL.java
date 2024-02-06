@@ -17,6 +17,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class initServiceIMPL implements initService {
+    //this class is used for initialization
+    private GateRepository gateRepository;
+    private ParkingFloorRepository parkingFloorRepository;
+    private ParkingLotRepository parkingLotRepository;
+    private ParkingSlotRepository parkingSlotRepository;
     public initServiceIMPL(GateRepository gateRepository, ParkingFloorRepository parkingFloorRepository,
                            ParkingLotRepository parkingLotRepository, ParkingSlotRepository parkingSlotRepository) {
         this.gateRepository = gateRepository;
@@ -25,13 +30,8 @@ public class initServiceIMPL implements initService {
         this.parkingSlotRepository = parkingSlotRepository;
     }
 
-    private GateRepository gateRepository;
-    private ParkingFloorRepository parkingFloorRepository;
-    private ParkingLotRepository parkingLotRepository;
-    private ParkingSlotRepository parkingSlotRepository;
-
     @Override
-    public void run() {//initialization done
+    public void run() {
         ParkingLot parkingLot=new ParkingLot();
         //setting attributes for ParkingFloor
         parkingLot.setId(1);
@@ -40,24 +40,25 @@ public class initServiceIMPL implements initService {
         parkingLot.setParkingLotStatus(ParkingLotStatus.OPEN);
         parkingLot.setAllowedvehicleTypes(new ArrayList<>(Arrays.asList(SupportedVehicleType.BUS,
                 SupportedVehicleType.BIKE,SupportedVehicleType.CAR)));
-        parkingLot.setSlotAllocationStrategy(SlotAllocationStrategyFactory.getSlotAllocationStategy());
+        parkingLot.setSlotAllocationStrategy(SlotAllocationStrategyFactory.getSlotAllocationStrategy());
         parkingLot.setBillCalculationStartegy(BillCalculationStrategyFactory.getBillCalculationStrategy());
 
         List<ParkingFloor>parkingFloors=new ArrayList<>();
         for(int i=0;i<10;i++){
-            //10 Floors of parking
+            //10 Floors of Parking
             ParkingFloor parkingFloor=new ParkingFloor();//new floor object
             parkingFloor.setFloorNumber(i+1);
             List<ParkingSlot>parkingSlots=new ArrayList<>();//ParkingSlots per floor
             for(int j=1;j<=10;j++) {
                 SupportedVehicleType supportedVehicleType= j % 2 == 0 ? SupportedVehicleType.CAR :
-                        SupportedVehicleType.BIKE;
-                ParkingSlot parkingSlot = new ParkingSlot(i * 100 + j,i * 100 + j,supportedVehicleType );
+                        SupportedVehicleType.BIKE;        //alternate CAR and Bike Parking
+                ParkingSlot parkingSlot = new ParkingSlot(i * 100 + j,i * 100 + j,
+                        supportedVehicleType );
                 parkingSlots.add(parkingSlot);
                 parkingSlotRepository.put(parkingSlot);
             }
 
-            parkingFloor.setParkingSlot(parkingSlots);//assigning parkingslots to respective parkingfloor
+            parkingFloor.setParkingSlot(parkingSlots);//assigning ParkingSlots to respective ParkingFloor
             parkingFloor.setParkingFloorStatus(ParkingFloorStatus.OPEN);
 
             Gate EntryGate=new Gate();
@@ -84,6 +85,7 @@ public class initServiceIMPL implements initService {
             parkingFloor.setGate(gates);
             parkingFloors.add(parkingFloor);    //adding floor
             parkingFloorRepository.put(parkingFloor);
+
         }
         parkingLot.setParkingFloor(parkingFloors);
         parkingLotRepository.put(parkingLot);

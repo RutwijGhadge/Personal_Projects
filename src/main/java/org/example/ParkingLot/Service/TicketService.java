@@ -9,5 +9,5 @@ import org.example.ParkingLot.Models.Vehicle;
 import java.time.LocalDateTime;
 
 public interface TicketService {
-    Ticket CreateTicket(Vehicle vehicle, int gateId, int parkingLotId, LocalDateTime entryTime) throws GateNotFoundException, ParkingLotNotFoundException, ParkingSlotNotAvailable;
+    Ticket CreateTicket(int id,Vehicle vehicle, int gateId, int parkingLotId, LocalDateTime entryTime) throws GateNotFoundException, ParkingLotNotFoundException, ParkingSlotNotAvailable;
 }

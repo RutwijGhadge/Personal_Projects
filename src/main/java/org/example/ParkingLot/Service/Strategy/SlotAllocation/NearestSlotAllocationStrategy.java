@@ -11,7 +11,7 @@ public class NearestSlotAllocationStrategy implements SlotAllocationStrategy{
 
     private ParkingSlot AllocateSlot(SupportedVehicleType vehicleType,ParkingLot parkingLot,Gate EntryGate,int floorNumber){
         floorNumber=EntryGate.getFloornumber();// floor from which the vehicle enters
-        //iterating on the slots present in the Floor
+        //iterating on the slots present in the Particular Floor
         for(ParkingSlot slot : parkingLot.getParkingFloor().get(floorNumber).getParkingSlot() ) {
             if (slot.getSupportedVehicleType().equals(vehicleType) &&
                     slot.getParkingSlotStatus().equals(ParkingSlotStatus.AVAILABLE)) {
@@ -24,7 +24,7 @@ public class NearestSlotAllocationStrategy implements SlotAllocationStrategy{
 
     @Override
     public ParkingSlot findParkingSlot(SupportedVehicleType vehicleType, ParkingLot parkingLot, Gate EntryGate) throws ParkingSlotNotAvailable {
-        int floorNumber = EntryGate.getFloornumber();
+        int floorNumber = EntryGate.getFloornumber();//to find the slot on same/nearest floor
         ParkingSlot slot=AllocateSlot(vehicleType,parkingLot,EntryGate,floorNumber);
         if(slot!=null)
             return slot;

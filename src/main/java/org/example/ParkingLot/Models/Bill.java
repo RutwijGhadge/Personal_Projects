@@ -3,18 +3,18 @@ package org.example.ParkingLot.Models;
 import java.time.LocalDateTime;
 
 
-public class Bill {
-    private int amount;
+public class Bill extends BaseModel{
+    private double amount;
     private Ticket ticket;
-    private LocalDateTime exitTime;
+    private String exitTime;
     private Payment payment;
     private Gate gate;
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -26,11 +26,11 @@ public class Bill {
         this.ticket = ticket;
     }
 
-    public LocalDateTime getExitTime() {
+    public String getExitTime() {
         return exitTime;
     }
 
-    public void setExitTime(LocalDateTime exitTime) {
+    public void setExitTime(String exitTime) {
         this.exitTime = exitTime;
     }
 

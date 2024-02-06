@@ -24,9 +24,10 @@ public class TicketController {
     }
 
     public TicketResponseDTO createTicket(TicketRequestDTO ticketRequestDTO) throws ParkingLotNotFoundException, ParkingSlotNotAvailable, GateNotFoundException {
+        int id=ticketRequestDTO.getParkingLotId();//parkingLotId is Set as TicketID
         Vehicle vehicle=new Vehicle(ticketRequestDTO.getNumber(), ticketRequestDTO.getName(),
                 ticketRequestDTO.getColor(),ticketRequestDTO.getVehicleType());
-        Ticket ticket=ticketService.CreateTicket(vehicle,ticketRequestDTO.getGateId(),
+        Ticket ticket=ticketService.CreateTicket(id,vehicle,ticketRequestDTO.getGateId(),
                 ticketRequestDTO.getParkingLotId(), LocalDateTime.now());
 
         TicketResponseDTO ticketResponseDTO=new TicketResponseDTO();//setting values

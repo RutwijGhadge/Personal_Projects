@@ -6,10 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="a1ed860c-9d3b-4f25-80b4-238fa3ca485a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/DTO/TicketRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/DTO/TicketRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/DTO/TicketResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/DTO/TicketResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Bill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Models/Vehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/ParkingLotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/ParkingLotMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Repository/GateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Repository/GateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/BillCalculation/BillCalculationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/BillCalculation/BillCalculationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/BillCalculation/LowBillCalculationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/BillCalculation/LowBillCalculationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/NearestSlotAllocationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/NearestSlotAllocationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/Strategy/SlotAllocation/SlotAllocationStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/TicketServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/TicketServiceIMPL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/initServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParkingLot/Service/initServiceIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicTacToe/Models/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -45,17 +61,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/RUTWIJ/Downloads/Personal_Projects&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/RUTWIJ/Downloads/Practise",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example.ParkingLot.Service" />
